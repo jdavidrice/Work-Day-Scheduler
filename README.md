@@ -21,7 +21,7 @@ This is a simple calendar application that allows a user to save events for each
 
 ## Photo
 
-![Screenshot of completed website.](work-day-scheduler.png)
+![Screenshot of published website](work-day-scheduler.png)
 
 * [Return to Top](#Work-Day-Scheduler)
 
