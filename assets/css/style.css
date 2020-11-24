@@ -4,13 +4,25 @@ body {
   line-height: 1;
 }
 
-textarea{
+.text-area{
+  height: 6rem;
   background: transparent;
-  border: none;
+  border: 2px solid red;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
   padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+.container {
+  height: 6rem;
+  text-align: center;
+  color: black;
+  background-color: #E5E5F7;
+  opacity: 1;
+  background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #E5E5F7 10px ), repeating-linear-gradient( #4456f755, #4456f7 );
+  
 }
 
 .jumbotron {
