@@ -7,6 +7,7 @@ body {
 
 .text-area{
   height: 6rem;
+  width: 30rem;
   background: white;
   border: 2px solid red;
   resize: none;
@@ -38,6 +39,10 @@ body {
 
 .description{
   white-space: pre-wrap;
+}
+
+#date {
+  margin-bottom: .5rem;
 }
 
 .time-block{

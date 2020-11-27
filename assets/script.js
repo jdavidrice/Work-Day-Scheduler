@@ -1,10 +1,13 @@
+m = moment();
+
 document.getElementById("jumbotron").innerHTML = `
   <h1 class="display-3">Work Day Scheduler</h1>
   <p class="lead">A simple calendar app for scheduling your work day</p>
-  <p id="currentDay" class="lead"></p>
+  <p id="currentDay" class="lead">${m.format("[Today is] dddd MMM Mo YYYY[, and the time is ]hh:mm")}</p>
 `;
 
 document.getElementById("timeblock").innerHTML = `
+  <div id="date"><p>${m.format("L")}</p></div>
   <input type="text" class="text-area" placeholder="Enter activity here">
   </input>
 `;
@@ -113,8 +116,8 @@ document.getElementById("timeblock").innerHTML = `
 //////////////////////////////////////////////////////////////////
 // DISPLAYING DATE IN DIFFERENT WAYS
 
-const m = moment();
-const m2 = moment("2020-10-13");
+// const m = moment();
+// const m2 = moment("2020-10-13");
 
 // console.log(m.format("dddd MMM Mo YYYY"));
 // console.log(m.format("[The day is] dddd MMM Mo[, and we're in] YYYY"));
@@ -140,29 +143,29 @@ const m2 = moment("2020-10-13");
 // console.log(eventMoment.calendar());
 
 // Difference between two moments in milliseconds (add "days" etc for other units)
-console.log(m.diff(m2, "days", true));
-console.log(m.diff(m2, "weeks", true));
+// console.log(m.diff(m2, "days", true));
+// console.log(m.diff(m2, "weeks", true));
 
-console.log(m.valueOf()); // millisec
-console.log(m.unix()); // sec
+// console.log(m.valueOf()); // millisec
+// console.log(m.unix()); // sec
 
-// Days in the selected month (m)
-console.log(m.daysInMonth());
+// // Days in the selected month (m)
+// console.log(m.daysInMonth());
 
-// To JSON
+// // To JSON
 
-// make an object
-const jsonObj = {     
-  momentObj: m2
-};
+// // make an object
+// const jsonObj = {     
+//   momentObj: m2
+// };
 
-m2.toJSON = function () {
-  return this.format("[This is JSON, and BTW, here is the date:] L");
-}
-console.log(JSON.stringify(jsonObj));
+// m2.toJSON = function () {
+//   return this.format("[This is JSON, and BTW, here is the date:] L");
+// }
+// console.log(JSON.stringify(jsonObj));
 
-// not an object
-console.log(JSON.stringify(m));
+// // not an object
+// console.log(JSON.stringify(m));
 
 
 
