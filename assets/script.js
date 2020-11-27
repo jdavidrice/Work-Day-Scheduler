@@ -2,8 +2,8 @@ m = moment();
 
 document.getElementById("jumbotron").innerHTML = `
   <h1 class="display-3">Work Day Scheduler</h1>
-  <p id="subtitle" class="lead">A simple calendar app for scheduling your WORKDAY.</p>
-  <p id="currentDay" class="lead">${m.format("[Today is] dddd, MMMM Do YYYY[, and the time is]")}</p>
+  <p id="subtitle" class="lead">A simple calendar app for scheduling your work day.</p>
+  <p id="currentDay" class="lead">${m.format("[Today is] dddd, MMMM Do YYYY[, and the time is...]")}</p>
   <div id="myClockDisplay" class="clock" onload="showTime()"></div>
 `;
 
@@ -12,14 +12,15 @@ document.getElementById("jumbotron").innerHTML = `
 //   `;  
 
 document.getElementById("timeblock").innerHTML =`
-  <div id="date"><p>${m.format("L")}</p>
-  </div>
-  <input type="text" class="text-area" placeholder="Enter activity here">
-  </input>
-`;
-    
+    <p>${m.format("L")}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn btn-large">
 
-// Digital Clock - This is not acting as intended because currently 12:00 is displaying as 00:00, or noon is AM (it should be PM)
+
+`;
+
+
+// Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 function showTime(){
   var date = new Date();
   var h = date.getHours(); // 0 - 23
@@ -29,16 +30,6 @@ function showTime(){
   
   h = h % 12;
   h = h ? h : 12;
-  
-  // if(h == 0){
-  //     h = 12;
-  // }
-  
-  // // The line below was originally h > 12, but that makes noon be AM.
-  // if(h >= 12){
-  //     h = h - 12;
-  //     session = "PM";
-  // }
   
   h = (h < 10) ? "0" + h : h;
   m = (m < 10) ? "0" + m : m;
