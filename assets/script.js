@@ -25,17 +25,20 @@ function showTime(){
   var h = date.getHours(); // 0 - 23
   var m = date.getMinutes(); // 0 - 59
   var s = date.getSeconds(); // 0 - 59
-  var session = "AM";
+  var session = h >= 12 ? 'PM' : 'AM';
   
-  if(h == 0){
-      h = 12;
-  }
+  h = h % 12;
+  h = h ? h : 12;
   
-  // The line below was originally h > 12, but that makes noon be AM.
-  if(h >= 12){
-      h = h - 12;
-      session = "PM";
-  }
+  // if(h == 0){
+  //     h = 12;
+  // }
+  
+  // // The line below was originally h > 12, but that makes noon be AM.
+  // if(h >= 12){
+  //     h = h - 12;
+  //     session = "PM";
+  // }
   
   h = (h < 10) ? "0" + h : h;
   m = (m < 10) ? "0" + m : m;
