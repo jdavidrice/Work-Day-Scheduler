@@ -4,16 +4,22 @@ document.getElementById("jumbotron").innerHTML = `
   <h1 class="display-3">Work Day Scheduler</h1>
   <p id="subtitle" class="lead">A simple calendar app for scheduling your WORKDAY.</p>
   <p id="currentDay" class="lead">${m.format("[Today is] dddd, MMMM Do YYYY[, and the time is]")}</p>
-  <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+  <div id="myClockDisplay" class="clock" onload="showTime()"></div>
 `;
 
-document.getElementById("timeblock").innerHTML = `
-  <div id="date"><p>${m.format("L")}</p></div>
+//  document.querySelector(".container").innerHTML =`
+  
+//   `;  
+
+document.getElementById("timeblock").innerHTML =`
+  <div id="date"><p>${m.format("L")}</p>
+  </div>
   <input type="text" class="text-area" placeholder="Enter activity here">
   </input>
 `;
+    
 
-// Digital Clock
+// Digital Clock - This is not acting as intended because currently 12:00 is displaying as 00:00, or noon is AM (it should be PM)
 function showTime(){
   var date = new Date();
   var h = date.getHours(); // 0 - 23
@@ -25,7 +31,8 @@ function showTime(){
       h = 12;
   }
   
-  if(h > 12){
+  // The line below was originally h > 12, but that makes noon be AM.
+  if(h >= 12){
       h = h - 12;
       session = "PM";
   }
@@ -35,8 +42,8 @@ function showTime(){
   s = (s < 10) ? "0" + s : s;
   
   var time = h + ":" + m + ":" + s + " " + session;
-  document.getElementById("MyClockDisplay").innerText = time;
-  document.getElementById("MyClockDisplay").textContent = time;
+  document.getElementById("myClockDisplay").innerText = time;
+  document.getElementById("myClockDisplay").textContent = time;
   
   setTimeout(showTime, 1000);
   
