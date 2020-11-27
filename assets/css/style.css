@@ -2,14 +2,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  background-color: gray;
+  background-color: rgb(121, 152, 255);
 }
 
 .text-area{
   height: 6rem;
   width: 30rem;
-  background: white;
-  border: 2px solid red;
+  background: transparent;
+  border: 2px solid lightgray;
   resize: none;
   color: #000000;
   padding: 10px;
@@ -18,8 +18,9 @@ body {
 }
 
 .container {
-  height: 6rem;
+  height: 60rem;
   text-align: center;
+  align-items: center;
   color: black;
   /* background-color: #E5E5F7;
   opacity: 1;
@@ -49,6 +50,16 @@ body {
 
 #date {
   margin-bottom: .5rem;
+}
+
+#timeblock {
+  background-color: rgb(255, 255, 132);
+  align-items: center;
+  text-align: center;
+  height: 8rem;
+  width: 50rem;
+  margin: auto;
+  padding: auto;
 }
 
 .time-block{
