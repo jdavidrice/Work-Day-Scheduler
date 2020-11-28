@@ -1,4 +1,25 @@
+// Render entire day's timeblocks on page load?
+
+// Materialize auto init
+M.AutoInit();
+
+// var instance = M.TapTarget.getInstance(elem);
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.tap-target');
+//   var instances = M.TapTarget.init(elems, options);
+// });
+
+// Or with jQuery
+
+// $(document).ready(function(){
+//   $('.tap-target').tapTarget();
+// });
+        
+// Moment instance
 m = moment();
+
+
 
 document.getElementById("jumbotron").innerHTML = `
   <h1 class="display-3">Work Day Scheduler</h1>
@@ -11,14 +32,19 @@ document.getElementById("jumbotron").innerHTML = `
   
 //   `;  
 
+// document.getElementById("dayblock").innerHTML =`
+  
+// `;
+
 document.getElementById("timeblock").innerHTML =`
-    <p>${m.format("L")}</p>
+    <p>${m.format("dddd")}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn btn-large">
+    <input type="submit" value="Save" class="saveBtn">
 
 
 `;
-
+// console.log(m.format("[The day is] dddd MMM Mo[, and we're in] YYYY"));
+// <p>${m.format("dddd[, ] MM[/]D")}</p>
 
 // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 function showTime(){
@@ -200,10 +226,88 @@ showTime();
 
 // // not an object
 // console.log(JSON.stringify(m));
+/////////////////////////////////////////////////////////////
+
+// ".isSame" accurate to millisecond
+
+// console.log(moment("2019-06-04").isSame("2019-06-04"));
+// console.log(moment("2019-06-04").isSame("2019-06-03"));
+// console.log(moment("2019-06-03 15:35:32.764").isSame("2019-06-03 15:35:32.764"));
+// console.log(moment("2019-06-04 15:35:32.764").isSame("2019-06-04 15:35:32.765"));
+// console.log(moment("2019-06-04 15:35:32").isSame("2019-06-04 15:35:32", "hour"));
+// console.log(moment("2019-06-04 14:35:32").isSame("2019-06-04 15:35:32", "hour"));
+
+// console.log(moment("2019-06-04").isBefore("2019-06-03"));
+// console.log(moment("2019-06-04").isBefore("2019-06-07"));
+// console.log(moment("2019-06-04").isBefore("2019-06-07", "year"));
+// console.log(moment("2019-06-04").isBefore("2020-06-07", "year"));
+// console.log(moment("2019-06-04").isBefore("2019-06-08", "week"));
+// console.log(moment("2019-06-04").isBefore("2019-06-09", "week"));
+// console.log(moment("2019-06-04").isAfter("2019-06-09"));
+// console.log(moment("2019-06-04").isAfter("2019-06-01"));
+// console.log(moment("2019-06-04").isSameOrBefore("2019-06-01"));
+// console.log(moment("2019-06-04").isSameOrBefore("2019-06-04"));
 
 
+// const m1 = moment("2019-06-06");
+// const m2 = moment("2019-06-05");
+// const m3 = moment("2019-06-07");
+// console.log(m1.isBetween(m2, m3));
+// console.log(m3.isBetween(m1, m3));
 
+// console.log(moment("2019-10-06 01:59:59").locale("en-au").isDST());
+// console.log(moment("2019-10-06 02:00:00").locale("en-au").isDST());
 
+// console.log(moment().locale("en-us").isDST());
+// console.log(moment("2020-11-01").isDST());
 
+// console.log(moment.isMoment(m1));
+// console.log(moment.isMoment({
+//   name: "jeremy"
+// }));
+
+// const jeremy = {
+//   name: "Jeremy",
+//   age: 44,
+//   date: false
+// }
+
+// console.log(jeremy);
+// console.log(jeremy.name);
+// console.log(jeremy.age);
+// console.log(jeremy.date);
+
+// console.log(moment.isDate({name: "jeremy"}));
+// console.log(moment.isDate(m1));
+// console.log(moment.isDate("2020-11-27"));
+/////////////////////////////////////////////////////////////////////
+
+// Durations
+
+// let dur;
+
+// dur = moment.duration(5000);
+// dur = moment.duration(5, "seconds");
+// dur = moment.duration(1, "day");
+
+// console.log(dur.humanize()); // "a few seconds"; "a day"
+
+// console.log(moment.duration(2, "weeks").days()); // 14
+// console.log(moment.duration(2, "weeks").get("days")); // 14
+// console.log(moment.duration(5, "weeks").days()); // 4 (weeks only works up to 30 days) 
+// console.log(moment.duration(5, "weeks").asDays()); // 35  
+// console.log(moment.duration(5, "weeks").as("days")); // 35  
+// console.log(moment.duration(5, "weeks").as("seconds")); // 3024000 
+
+// console.log(moment.duration(1, "day").add(1, "week").humanize());
+// console.log(moment.duration(1, "day").subtract(1, "week").humanize());
+
+// const m1 = moment().add(2, "days");
+// const m2 = moment().add(1, "week");
+
+// console.log(moment.duration(m2.diff(m1)).asDays()); // 5
+// console.log(moment.duration(m2.diff(m1)).asHours()); // 120
+
+// console.log(dur.toISOString());
 
 
