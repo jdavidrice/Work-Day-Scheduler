@@ -11,6 +11,12 @@ body {
   line-height: 1;
   background-color: whitesmoke;
 }
+
+p.timelabel {
+  text-align: left;
+}
+
+
 /* 
 .text-area{
   height: 6rem;
@@ -31,19 +37,14 @@ body {
   color: black;
   
 }
-
-.jumbotron {
-  text-align: center;
-  color: black;
-  border-radius: 0;
-  border-bottom: 2px solid black;
-  padding-bottom: 2px;
-}
 */
-/*#subtitle {
-  border-bottom: 10px solid black;
+.jumbotron {
+ /* text-align: center;
+  color: black;
+  border-radius: 0;*/
+  border-bottom: 1px solid rgb(141, 141, 141);
+  /*padding-bottom: 20px;*/
 }
-
 
 .description{
   white-space: pre-wrap;
@@ -67,8 +68,8 @@ body {
 .timeblock {
   background-color: transparent;
   border-style: solid;
-  border-width: 1px;
-  border-color: black;
+  border-width: 1px 1px .5px 1px;
+  border-color: rgb(141, 141, 141);
   align-items: center;
   text-align: center;
   height: 8rem;
@@ -132,5 +133,5 @@ body {
   transform: translateX(-50%) translateY(-50%);
   color: black;
   font-size: 2rem;
-  letter-spacing: 7px;
+  letter-spacing: 4px;
 }

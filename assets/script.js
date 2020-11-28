@@ -26,52 +26,52 @@ document.querySelector(".today").innerHTML =`
   <h5>${m.format("dddd")}</h5>
 `;
 document.getElementById("timeblock8").innerHTML =`
-    <p>${"8:00 AM"}</p>
+    <p class="timelabel">${"8:00 AM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock9").innerHTML =`
-    <p>${"9:00 AM"}</p>
+    <p class="timelabel">${"9:00 AM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock10").innerHTML =`
-    <p>${"10:00 AM"}</p>
+    <p class="timelabel">${"10:00 AM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock11").innerHTML =`
-    <p>${"11:00 AM"}</p>
+    <p class="timelabel">${"11:00 AM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock12").innerHTML =`
-    <p>${"12:00 PM"}</p>
+    <p class="timelabel">${"12:00 PM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock1").innerHTML =`
-    <p>${"1:00 PM"}</p>
+    <p class="timelabel">${"1:00 PM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock2").innerHTML =`
-    <p>${"2:00 PM"}</p>
+    <p class="timelabel">${"2:00 PM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock3").innerHTML =`
-    <p>${"3:00 PM"}</p>
+    <p class="timelabel">${"3:00 PM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock4").innerHTML =`
-    <p>${"4:00 PM"}</p>
+    <p class="timelabel">${"4:00 PM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock5").innerHTML =`
-    <p>${"5:00 PM"}</p>
+    <p class="timelabel">${"5:00 PM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
@@ -89,11 +89,11 @@ function showTime(){
   h = h % 12;
   h = h ? h : 12;
   
-  h = (h < 10) ? "0" + h : h;
+  //h = (h < 10) ? "0" + h : h;
   m = (m < 10) ? "0" + m : m;
   s = (s < 10) ? "0" + s : s;
   
-  var time = h + ":" + m + ":" + s + " " + session;
+  var time = h + ":" + m + " " + session;
   document.getElementById("myClockDisplay").innerText = time;
   document.getElementById("myClockDisplay").textContent = time;
   
