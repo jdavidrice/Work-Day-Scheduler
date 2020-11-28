@@ -3,19 +3,6 @@
 // Materialize auto init
 M.AutoInit();
 
-// var instance = M.TapTarget.getInstance(elem);
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.tap-target');
-//   var instances = M.TapTarget.init(elems, options);
-// });
-
-// Or with jQuery
-
-// $(document).ready(function(){
-//   $('.tap-target').tapTarget();
-// });
-        
 // Moment instance
 m = moment();
 
@@ -35,13 +22,58 @@ document.getElementById("jumbotron").innerHTML = `
 // document.getElementById("dayblock").innerHTML =`
   
 // `;
-
-document.getElementById("timeblock").innerHTML =`
-    <p>${m.format("dddd")}</p>
+document.querySelector(".today").innerHTML =`
+  <h5>${m.format("dddd")}</h5>
+`;
+document.getElementById("timeblock8").innerHTML =`
+    <p>${"8:00 AM"}</p>
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
-
-
+`;
+document.getElementById("timeblock9").innerHTML =`
+    <p>${"9:00 AM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock10").innerHTML =`
+    <p>${"10:00 AM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock11").innerHTML =`
+    <p>${"11:00 AM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock12").innerHTML =`
+    <p>${"12:00 PM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock1").innerHTML =`
+    <p>${"1:00 PM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock2").innerHTML =`
+    <p>${"2:00 PM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock3").innerHTML =`
+    <p>${"3:00 PM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock4").innerHTML =`
+    <p>${"4:00 PM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
+`;
+document.getElementById("timeblock5").innerHTML =`
+    <p>${"5:00 PM"}</p>
+    <input type="text" class="text-area" placeholder="Enter activity here">
+    <input type="submit" value="Save" class="saveBtn">
 `;
 // console.log(m.format("[The day is] dddd MMM Mo[, and we're in] YYYY"));
 // <p>${m.format("dddd[, ] MM[/]D")}</p>

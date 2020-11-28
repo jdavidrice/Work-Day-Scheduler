@@ -2,15 +2,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-align: center;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  background-color: rgb(121, 152, 255);
+  background-color: whitesmoke;
 }
-
+/* 
 .text-area{
   height: 6rem;
   width: 30rem;
@@ -28,34 +29,24 @@ body {
   text-align: center;
   align-items: center;
   color: black;
-  /* background-color: #E5E5F7;
-  opacity: 1;
-  background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #E5E5F7 10px ), repeating-linear-gradient( #4456f755, #4456f7 ); */
-  /* background-color: #1a1ad6;
-  opacity: 0.7;
-  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #1a1ad6 24px ), repeating-linear-gradient( #5cf74455, #5cf744 ); */
+  
 }
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 2px solid black;
   padding-bottom: 2px;
 }
-
+*/
 /*#subtitle {
   border-bottom: 10px solid black;
 }
-*/
+
 
 .description{
   white-space: pre-wrap;
-}
-
-#date {
-  margin-bottom: .5rem;
 }
 
 /* #dayblock {
@@ -71,18 +62,21 @@ body {
   padding: 0 16px;
   text-transform: uppercase;
   vertical-align: middle;
-  -webkit-tap-highlight-color: green; */
-
-#timeblock {
-  background-color: rgb(255, 255, 132);
+  -webkit-tap-highlight-color: green; 
+*/
+.timeblock {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
   align-items: center;
   text-align: center;
   height: 8rem;
-  width: 50rem;
+  width: auto;
   margin: auto;
   padding: auto;
 }
-
+/*
 .time-block{
   text-align: center;
   border-radius: 15px;
@@ -127,7 +121,7 @@ body {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
-
+*/
 /* Digital Clock */
 
 .clock {
