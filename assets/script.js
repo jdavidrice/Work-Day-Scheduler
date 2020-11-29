@@ -1,5 +1,85 @@
-// jQuery Wrapper (is this needed?+)
+// jQuery Wrapper (is this needed?)
 $(document).ready(function () {
+
+  // DOM Elements
+const activity = document.querySelector('#activity')
+const saveBtn = document.querySelector('#saveBtn')
+
+// Event Listeners
+loadEventListeners();
+
+function loadEventListeners() {
+  document.addEventListener('DOMContentLoaded', getActivities);
+  document.addEventListener('submit', addActivity);
+  saveBtn.addEventListener('click', addActivity);
+}
+
+// Get Activities from Local Storage
+function getActivities() {
+  let activities;
+  if(localStorage.getItem('activities') === null){
+    activities = [];
+  } else {
+    activites = JSON.parse(localStorage.getItem('activities'));
+  }
+}
+
+// Add activity
+function addActivity(e) {
+if(activity.value === '') {
+  alert('Please add a task');
+}
+storeActivityInLocalStorage(activity.value);
+
+  e.preventDefault();
+}
+
+// Store activity
+
+function storeActivityInLocalStorage(activity) {
+  activity = JSON.parse(localStorage.getItem('activity'));
+  localStorage.setItem('activity', JSON.stringify(activity));
+}
+
+
+//   let activities;
+//   if(localStorage.getItem('activities') === null){
+//     activities = [];
+//   } else {
+//     activities = JSON.parse(localStorage.getItem('activities'));
+//   }
+
+//   activities.push(activity);
+
+//   localStorage.setItem('activities', JSON.stringify(activities));
+// }
+
+
+// // DOM elements for saving activities
+// const activity = document.querySelector('.text-area')
+// const saveBtn = document.querySelector('.saveBtn')
+// const activities = JSON.parse(localStorage.getItem('activities')) || []
+
+// activity.innerText = activities
+
+// // Save activities function
+// saveActivity = e => {
+  
+
+//   const info = {
+//     info: activities,
+//     activity: activity.value
+//   }
+
+//   activities.push(info)
+
+//   highScores.splice(9)
+
+//   localStorage.setItem('activities', JSON.stringify(activities))
+
+//   e.preventDefault()
+// }
+
 // Materialize auto init
 M.AutoInit();
 
@@ -9,8 +89,8 @@ m = moment();
 $('.jumbotron').html(`
   <h1 class='display-3'>Work Day Scheduler</h1>
   <h2 id='subtitle' class='lead'>A simple calendar app for scheduling your work day.</h2>
-  <h3 id='currentDay' class='lead'>${m.format('[Today is] dddd, MMMM Do YYYY[, and the time is...]')}</h3>
-  <h4 id='myClockDisplay' class='clock' onload='showTime()'></h4>
+  <p id='currentDay' class='lead'>${m.format('[Today is] dddd, MMMM Do YYYY[, and the time is...]')}</p>
+  <h3 id='myClockDisplay' class='clock' onload='showTime()'></h3>
 `)
 
 $('.today').html(`
@@ -41,6 +121,8 @@ function showTime(){
 
 showTime();
 
+})
+
 // Saving hourly tasks to local storage
 // document.querySelector(".saveBtn").addEventListener("submit", function(e){
 //   const task = document.querySelector(".text-area").value;
@@ -64,7 +146,7 @@ showTime();
 //     console.log(task)
 //   })
 
-})
+
 
 // Fun with Moment.js 
 ///////////////////////////////////////////////////////////////////
