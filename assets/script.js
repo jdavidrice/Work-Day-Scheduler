@@ -1,6 +1,9 @@
 // DOM Elements
-const saveBtn = document.querySelector(".saveBtn");
-const textArea = document.querySelector(".textArea");
+const form = document.querySelector("#task-form");
+const taskList = document.querySelector(".collection");
+const clearBtn = document.querySelector(".clear-tasks");
+const filter = document.querySelector("#filter");
+const taskInput = document.querySelector("#task");
 
 
 // Materialize auto init
@@ -9,24 +12,6 @@ M.AutoInit();
 // Moment instance
 m = moment();
 
-// Load all event listeners
-loadEventListeners();
-
-function loadEventListeners() {
-  // Add save event
-  document.addEventListener('saveBtn', addActivity);
-}
-
-// Add activity
-function addActivity(e) {
-  if(textArea.value === "") {
-    alert("Please add an activity");
-    console.log("activity");
-  }
-
-
-  e.preventDefault();
-}
 
 
 
@@ -42,14 +27,21 @@ document.querySelector(".today").innerHTML =`
 `;
 document.getElementById("timeblock8").innerHTML =`
     <span class="card-title">8:00 AM</span>
-    <input type="text" class="textArea" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
+    <div class="row">
+      <form id="task-form">
+        <div class="input-field col s12">
+          <input type="text" name="task" id="task">
+          <label for="task">Enter activity here</label>
+        </div>
+        <input type="submit" value="Add Task" class="btn">
+      </form>
+    </div>
 `;  
 document.getElementById("timeblock9").innerHTML =`
     <span class="card-title">9:00 AM</span>
     <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
-`;
+`;  
 document.getElementById("timeblock10").innerHTML =`
     <span class="card-title">10:00 AM</span>
     <input type="text" class="textArea" placeholder="Enter activity here">
@@ -90,6 +82,24 @@ document.getElementById("timeblock5").innerHTML =`
     <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
+
+// Load all event listeners
+loadEventListeners();
+
+function loadEventListeners() {
+  // Add task event
+  form.addEventListener('submit', addTask);
+}
+
+// Add activity
+function addTask(e) {
+  if(taskInput.value === "") {
+    alert("Please add an activity");
+  }
+
+
+  e.preventDefault();
+}
 
 // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 function showTime(){
