@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous">
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet">
@@ -22,19 +25,57 @@
     <title>Work Day Scheduler</title>
   </head>
   <body>
+    <!-- Header -->
     <header id="jumbotron" class="jumbotron"></header>
       <div class="container">
+        <!-- Main Content -->
         <div class="today"></div>
-        <div id="timeblock8" class="timeblock"></div><br>
-        <div id="timeblock9" class="timeblock"></div><br>
-        <div id="timeblock10" class="timeblock"></div><br>
-        <div id="timeblock11" class="timeblock"></div><br>
-        <div id="timeblock12" class="timeblock"></div><br>
-        <div id="timeblock1" class="timeblock"></div><br>
-        <div id="timeblock2" class="timeblock"></div><br>
-        <div id="timeblock3" class="timeblock"></div><br>
-        <div id="timeblock4" class="timeblock"></div><br>
-        <div id="timeblock5" class="timeblock"></div><br>
+        <!-- Timeblocks -->
+        <div id="timeblock8" class="timeblock">
+          <p class="timelabel">8:00 AM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock9" class="timeblock">
+          <p class="timelabel">9:00 AM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock10" class="timeblock">
+          <p class="timelabel">10:00 AM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock11" class="timeblock">
+          <p class="timelabel">11:00 AM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock12" class="timeblock">
+          <p class="timelabel">12:00 PM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock1" class="timeblock">
+          <p class="timelabel">1:00 PM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock2" class="timeblock">
+          <p class="timelabel">2:00 PM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock3" class="timeblock">
+          <p class="timelabel">3:00 PM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
+        <div id="timeblock4" class="timeblock">
+          <p class="timelabel">4:00 PM</p>
+          <input type="text" class="text-area" placeholder="Enter activity here">
+          <input type="submit" value="Save" class="saveBtn">
+        </div><br>
       </div>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -42,8 +83,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!-- <script src="lib\moment\moment.min.js"></script> -->
-    <!-- <script src="lib\moment\moment-with-locales.js"></script> -->
     <!-- Additional JS -->
     <script src="assets\script.js"></script>
   </body>

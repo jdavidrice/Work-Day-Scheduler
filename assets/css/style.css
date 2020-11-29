@@ -126,7 +126,6 @@ p.timelabel {
 /* Digital Clock */
 
 .clock {
-  margin-top: 2rem;
   position: relative;
   top: 50%;
   left: 50%;

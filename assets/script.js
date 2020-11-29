@@ -1,68 +1,21 @@
+// jQuery Wrapper (is this needed?+)
+$(document).ready(function () {
 // Materialize auto init
 M.AutoInit();
 
 // Moment instance
 m = moment();
 
-document.getElementById("jumbotron").innerHTML = `
-  <h1 class="display-3">Work Day Scheduler</h1>
-  <p id="subtitle" class="lead">A simple calendar app for scheduling your work day.</p>
-  <p id="currentDay" class="lead">${m.format("[Today is] dddd, MMMM Do YYYY[, and the time is...]")}</p>
-  <div id="myClockDisplay" class="clock" onload="showTime()"></div>
-`;
-document.querySelector(".today").innerHTML =`
+$('.jumbotron').html(`
+  <h1 class='display-3'>Work Day Scheduler</h1>
+  <h2 id='subtitle' class='lead'>A simple calendar app for scheduling your work day.</h2>
+  <h3 id='currentDay' class='lead'>${m.format('[Today is] dddd, MMMM Do YYYY[, and the time is...]')}</h3>
+  <h4 id='myClockDisplay' class='clock' onload='showTime()'></h4>
+`)
+
+$('.today').html(`
   <h5>${m.format("dddd")}</h5>
-`;
-document.getElementById("timeblock8").innerHTML =`
-    <p class="timelabel">${"8:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock9").innerHTML =`
-    <p class="timelabel">${"9:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock10").innerHTML =`
-    <p class="timelabel">${"10:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock11").innerHTML =`
-    <p class="timelabel">${"11:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock12").innerHTML =`
-    <p class="timelabel">${"12:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock1").innerHTML =`
-    <p class="timelabel">${"1:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock2").innerHTML =`
-    <p class="timelabel">${"2:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock3").innerHTML =`
-    <p class="timelabel">${"3:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock4").innerHTML =`
-    <p class="timelabel">${"4:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
-document.getElementById("timeblock5").innerHTML =`
-    <p class="timelabel">${"5:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
-    <input type="submit" value="Save" class="saveBtn">
-`;
+`)
 
 // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 function showTime(){
@@ -89,42 +42,29 @@ function showTime(){
 showTime();
 
 // Saving hourly tasks to local storage
-document.querySelector(".saveBtn").addEventListener("submit", function(e){
-  const task = document.querySelector(".text-area").value;
+// document.querySelector(".saveBtn").addEventListener("submit", function(e){
+//   const task = document.querySelector(".text-area").value;
 
-  let tasks;
+//   let tasks;
 
-  if(localStorage.getItem("tasks") === null) {
-    tasks = [];
-  } else {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-  }
+//   if(localStorage.getItem("tasks") === null) {
+//     tasks = [];
+//   } else {
+//     tasks = JSON.parse(localStorage.getItem("tasks"));
+//   }
 
-  tasks.push(task);
+//   tasks.push(task);
 
-  localStorage.seItem("tasks", JSON.stringify(tasks));
+//   localStorage.seItem("tasks", JSON.stringify(tasks));
+
+// })
+// const tasks = JSON.parse(localStorage.getItem("tasks"));
+
+//     tasks.forEach(function(task){
+//     console.log(task)
+//   })
 
 })
-
-const tasks = JSON.parse(localStorage.getItem("tasks"));
-
-    tasks.forEach(function(task){
-    console.log(task)
-  })
-
-
-
-
-
-
-// localStorage.setItem('favoriteFlavor', 'vanilla');
-
-// var taste = localStorage.getItem('favoriteFlavor');
-
-
-
-
-
 
 // Fun with Moment.js 
 ///////////////////////////////////////////////////////////////////
@@ -184,7 +124,7 @@ const tasks = JSON.parse(localStorage.getItem("tasks"));
 
 // console.log(moment.max(moment(), differentMoment).toString());
 
-///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 // const m = moment(); // Defaults to local time zone
 
 // console.log(`Original Moment: ${m.toString()}`);
@@ -228,7 +168,7 @@ const tasks = JSON.parse(localStorage.getItem("tasks"));
 // Convert between Local and UTC
 // console.log(`After Manipulation: ${m.toString()}`);
 
-//////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 // DISPLAYING DATE IN DIFFERENT WAYS
 
 // const m = moment();
@@ -281,7 +221,7 @@ const tasks = JSON.parse(localStorage.getItem("tasks"));
 
 // // not an object
 // console.log(JSON.stringify(m));
-/////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 // ".isSame" accurate to millisecond
 
@@ -335,7 +275,7 @@ const tasks = JSON.parse(localStorage.getItem("tasks"));
 // console.log(moment.isDate({name: "jeremy"}));
 // console.log(moment.isDate(m1));
 // console.log(moment.isDate("2020-11-27"));
-/////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 // Durations
 
