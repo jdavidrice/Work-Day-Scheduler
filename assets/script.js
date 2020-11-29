@@ -1,4 +1,7 @@
-// Render entire day's timeblocks on page load?
+// DOM Elements
+const saveBtn = document.querySelector(".saveBtn");
+const textArea = document.querySelector(".textArea");
+
 
 // Materialize auto init
 M.AutoInit();
@@ -6,77 +9,87 @@ M.AutoInit();
 // Moment instance
 m = moment();
 
+// Load all event listeners
+loadEventListeners();
+
+function loadEventListeners() {
+  // Add save event
+  document.addEventListener('saveBtn', addActivity);
+}
+
+// Add activity
+function addActivity(e) {
+  if(textArea.value === "") {
+    alert("Please add an activity");
+    console.log("activity");
+  }
+
+
+  e.preventDefault();
+}
+
 
 
 document.getElementById("jumbotron").innerHTML = `
-  <h1 class="display-3">Work Day Scheduler</h1>
-  <p id="subtitle" class="lead">A simple calendar app for scheduling your work day.</p>
-  <p id="currentDay" class="lead">${m.format("[Today is] dddd, MMMM Do YYYY[, and the time is...]")}</p>
-  <div id="myClockDisplay" class="clock" onload="showTime()"></div>
+  <h1 class="display-3">Plan Your Stupid Day, Dummy!</h1>
+  <h2 id="subtitle" class="lead">A simple calendar app for scheduling your work day.</h2>
+  <h3 id="currentDay" class="lead">${m.format("[Today is] dddd, MMMM Do YYYY[, and the time is...]")}</h3>
+  <h4 id="myClockDisplay" class="clock" onload="showTime()"></h4>
+  <h5 class="lead">NOW GET TO WORK ALREADY!</h5>
 `;
-
-//  document.querySelector(".container").innerHTML =`
-  
-//   `;  
-
-// document.getElementById("dayblock").innerHTML =`
-  
-// `;
 document.querySelector(".today").innerHTML =`
-  <h5>${m.format("dddd")}</h5>
+  <h6>${"Today's Schedule"}</h6>
 `;
 document.getElementById("timeblock8").innerHTML =`
-    <p class="timelabel">${"8:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">8:00 AM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
-`;
+`;  
 document.getElementById("timeblock9").innerHTML =`
-    <p class="timelabel">${"9:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">9:00 AM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock10").innerHTML =`
-    <p class="timelabel">${"10:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">10:00 AM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock11").innerHTML =`
-    <p class="timelabel">${"11:00 AM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">11:00 AM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock12").innerHTML =`
-    <p class="timelabel">${"12:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">12:00 PM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock1").innerHTML =`
-    <p class="timelabel">${"1:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">1:00 PM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock2").innerHTML =`
-    <p class="timelabel">${"2:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">2:00 PM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock3").innerHTML =`
-    <p class="timelabel">${"3:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">3:00 PM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock4").innerHTML =`
-    <p class="timelabel">${"4:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">4:00 PM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
 document.getElementById("timeblock5").innerHTML =`
-    <p class="timelabel">${"5:00 PM"}</p>
-    <input type="text" class="text-area" placeholder="Enter activity here">
+    <span class="card-title">5:00 PM</span>
+    <input type="text" class="textArea" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
-// console.log(m.format("[The day is] dddd MMM Mo[, and we're in] YYYY"));
-// <p>${m.format("dddd[, ] MM[/]D")}</p>
 
 // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 function showTime(){

@@ -5,12 +5,25 @@
   text-align: center;
 }
 
+header {
+  margin: 0rem auto;
+  padding: 1rem auto 1rem auto;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
   background-color: whitesmoke;
 }
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 1rem;
+}
+
 
 p.timelabel {
   text-align: left;
@@ -50,39 +63,13 @@ p.timelabel {
   white-space: pre-wrap;
 }
 
-/* #dayblock {
-  height: 55rem;
-} */
-
-/* .btn, .btn-large, .btn-small, .btn-flat {
-  border: none;
-  border-radius: 2px;
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 16px;
-  text-transform: uppercase;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: green; 
-*/
 .timeblock {
   background-color: transparent;
   border-style: solid;
-  border-width: 1px 1px .5px 1px;
+  border-width: 1px;
   border-color: rgb(141, 141, 141);
-  align-items: center;
-  text-align: center;
-  height: 8rem;
-  width: auto;
-  margin: auto;
-  padding: auto;
 }
 /*
-.time-block{
-  text-align: center;
-  border-radius: 15px;
-}
-
 .row {
   white-space: pre-wrap;
   height: 80px;
