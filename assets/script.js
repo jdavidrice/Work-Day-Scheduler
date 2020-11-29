@@ -1,12 +1,8 @@
-// Render entire day's timeblocks on page load?
-
 // Materialize auto init
 M.AutoInit();
 
 // Moment instance
 m = moment();
-
-
 
 document.getElementById("jumbotron").innerHTML = `
   <h1 class="display-3">Work Day Scheduler</h1>
@@ -14,14 +10,6 @@ document.getElementById("jumbotron").innerHTML = `
   <p id="currentDay" class="lead">${m.format("[Today is] dddd, MMMM Do YYYY[, and the time is...]")}</p>
   <div id="myClockDisplay" class="clock" onload="showTime()"></div>
 `;
-
-//  document.querySelector(".container").innerHTML =`
-  
-//   `;  
-
-// document.getElementById("dayblock").innerHTML =`
-  
-// `;
 document.querySelector(".today").innerHTML =`
   <h5>${m.format("dddd")}</h5>
 `;
@@ -75,8 +63,6 @@ document.getElementById("timeblock5").innerHTML =`
     <input type="text" class="text-area" placeholder="Enter activity here">
     <input type="submit" value="Save" class="saveBtn">
 `;
-// console.log(m.format("[The day is] dddd MMM Mo[, and we're in] YYYY"));
-// <p>${m.format("dddd[, ] MM[/]D")}</p>
 
 // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 function showTime(){
@@ -97,11 +83,48 @@ function showTime(){
   document.getElementById("myClockDisplay").innerText = time;
   document.getElementById("myClockDisplay").textContent = time;
   
-  setTimeout(showTime, 1000);
-  
+  setTimeout(showTime, 1000); 
 }
 
 showTime();
+
+// Saving hourly tasks to local storage
+document.querySelector(".saveBtn").addEventListener("submit", function(e){
+  const task = document.querySelector(".text-area").value;
+
+  let tasks;
+
+  if(localStorage.getItem("tasks") === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+  }
+
+  tasks.push(task);
+
+  localStorage.seItem("tasks", JSON.stringify(tasks));
+
+})
+
+const tasks = JSON.parse(localStorage.getItem("tasks"));
+
+    tasks.forEach(function(task){
+    console.log(task)
+  })
+
+
+
+
+
+
+// localStorage.setItem('favoriteFlavor', 'vanilla');
+
+// var taste = localStorage.getItem('favoriteFlavor');
+
+
+
+
+
 
 // Fun with Moment.js 
 ///////////////////////////////////////////////////////////////////
