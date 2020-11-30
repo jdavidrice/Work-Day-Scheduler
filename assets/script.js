@@ -1,46 +1,84 @@
 // jQuery Wrapper (is this needed?)
 $(document).ready(function () {
 
-  // DOM Elements
-const activity = document.querySelector('#activity')
-const saveBtn = document.querySelector('#saveBtn')
+//   // DOM Elements
+// const activity = document.querySelector('#activity')
+// const saveBtn = document.querySelector('#saveBtn')
 
-// Event Listeners
-loadEventListeners();
+// // Event Listeners
+// loadEventListeners();
 
-function loadEventListeners() {
-  document.addEventListener('DOMContentLoaded', getActivities);
-  document.addEventListener('submit', addActivity);
-  saveBtn.addEventListener('click', addActivity);
-}
+// function loadEventListeners() {
+//   document.addEventListener('DOMContentLoaded', getActivity);
+//   document.addEventListener('submit', addActivity);
+//   saveBtn.addEventListener('click', addActivity);
+// }
 
-// Get Activities from Local Storage
-function getActivities() {
-  let activities;
-  if(localStorage.getItem('activities') === null){
-    activities = [];
-  } else {
-    activites = JSON.parse(localStorage.getItem('activities'));
-  }
-}
+// // Get Activities from Local Storage
+// function getActivity(e) { 
+//   if(localStorage.getItem('activity') === null){     
+//     activity = '';
+//   } else {
+//     activity.value = localStorage.getItem('activity');
+//   }
 
-// Add activity
-function addActivity(e) {
-if(activity.value === '') {
-  alert('Please add a task');
-}
-storeActivityInLocalStorage(activity.value);
+//   e.preventDefault();
+// }
 
-  e.preventDefault();
-}
+// // Add activity
+// function addActivity(e) {
+// if(activity.value === '') {
+//   alert('Please add a task');
+// } else {
+//   localStorage.setItem('activity', activity.value)
+// }
+//   e.preventDefault();
+// }
+////////////////////////////////////////////////////////////////////////////////
+// Above this line almost works - seems to set local storage, but doens't get it
 
-// Store activity
+activity8.value = localStorage.getItem('activity8');
+saveBtn8.onclick = () => {
+  localStorage.setItem('activity8', activity8.value)
+};
+activity9.value = localStorage.getItem('activity9');
+saveBtn9.onclick = () => {
+  localStorage.setItem('activity9', activity9.value)
+};
+activity10.value = localStorage.getItem('activity10');
+saveBtn10.onclick = () => {
+  localStorage.setItem('activity10', activity10.value)
+};
+activity11.value = localStorage.getItem('activity11');
+saveBtn11.onclick = () => {
+  localStorage.setItem('activity11', activity11.value)
+};
+activity12.value = localStorage.getItem('activity12');
+saveBtn12.onclick = () => {
+  localStorage.setItem('activity12', activity12.value)
+};
+activity1.value = localStorage.getItem('activity1');
+saveBtn1.onclick = () => {
+  localStorage.setItem('activity1', activity1.value)
+};
+activity2.value = localStorage.getItem('activity2');
+saveBtn2.onclick = () => {
+  localStorage.setItem('activity2', activity2.value)
+};
+activity3.value = localStorage.getItem('activity3');
+saveBtn3.onclick = () => {
+  localStorage.setItem('activity3', activity3.value)
+};
+activity4.value = localStorage.getItem('activity4');
+saveBtn4.onclick = () => {
+  localStorage.setItem('activity4', activity4.value)
+};
 
-function storeActivityInLocalStorage(activity) {
-  activity = JSON.parse(localStorage.getItem('activity'));
-  localStorage.setItem('activity', JSON.stringify(activity));
-}
 
+// // Store activity
+// function storeActivityInLocalStorage(activity) {
+//   activity = JSON.parse(localStorage.getItem('activity'));
+//   localStorage.setItem('activity', JSON.stringify(activity));
 
 //   let activities;
 //   if(localStorage.getItem('activities') === null){
@@ -117,9 +155,9 @@ function showTime(){
   document.getElementById("myClockDisplay").textContent = time;
   
   setTimeout(showTime, 1000); 
-}
+  }
 
-showTime();
+  showTime();
 
 })
 
