@@ -5,7 +5,7 @@ $(document).ready(function () {
 M.AutoInit();
 
 // Moment instance
-m = moment();
+const m = moment();
 
 // Getters and Setters for each timeblock
 activity8.value = localStorage.getItem('activity8');
@@ -58,6 +58,34 @@ $('.today').html(`
   <h5>${m.format("dddd")}</h5>
 `)
 
+// Timeblock hour label
+// $('.timelabel8').html(`
+//   <p>${m.format("8:00")}</p>
+// `)
+
+// Change timeblock color based on actual time
+function updateCheck () {
+  setInterval(()=> {
+    currentMinutes = m.minutes()
+    currentHour = m.hour()
+   // if (currentMinutes === 0){
+      // update css
+      $( ".timeblock" ).each(function( index ) {
+        const thisHour = $(this).attr("data-hour")
+        if (thisHour === currentHour) {
+          $(this).addClass("present")
+        } else if (thisHour < currentHour) {
+          $(this).addClass("past")
+        } else {
+          $(this).addClass("future")
+        }
+      });
+    //}
+  }, 1000)
+} 
+
+updateCheck();
+
 // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 function showTime(){
   var date = new Date();
@@ -73,12 +101,11 @@ function showTime(){
   m = (m < 10) ? "0" + m : m;
   s = (s < 10) ? "0" + s : s;
   
-  var time = h + ":" + m + " " + session;
+  var time = h + ":" + m + ":" + s + " " + session;
   document.getElementById('myClockDisplay').innerText = time;
   document.getElementById('myClockDisplay').textContent = time;
-  
-  setTimeout(showTime, 1000); 
   }
-  showTime();
+  
+  setInterval(showTime, 1000);
 })
 
