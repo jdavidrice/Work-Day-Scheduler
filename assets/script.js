@@ -49,38 +49,29 @@ saveBtn4.onclick = () => {
 $('.jumbotron').html(`
   <h1 class='display-3'>Work Day Scheduler</h1>
   <h2 id='subtitle' class='lead'>A simple calendar app for scheduling your work day.</h2>
-  <p id='currentDay' class='lead'>${m.format('[Today is] dddd, MMMM Do YYYY[, and the time is...]')}</p>
+  <p id='currentDay' class='lead'>${m.format('[Today is] dddd, MMMM Do YYYY[, and the time is...]')}</p><br>
   <h3 id='myClockDisplay' class='clock' onload='showTime()'></h3>
 `)
 
 // Main content HTML
 $('.today').html(`
-  <h5>${m.format("dddd")}</h5>
+  <h4>${m.format("dddd['s Schedule]")}</h4>
 `)
-
-// Timeblock hour label
-// $('.timelabel8').html(`
-//   <p>${m.format("8:00")}</p>
-// `)
 
 // Change timeblock color based on actual time
 function updateCheck () {
   setInterval(()=> {
-    currentMinutes = m.minutes()
     currentHour = m.hour()
-   // if (currentMinutes === 0){
-      // update css
-      $( ".timeblock" ).each(function( index ) {
+      $( ".timeblock" ).each(function() {
         const thisHour = $(this).attr("data-hour")
-        if (thisHour === currentHour) {
+        if (thisHour == currentHour) {
           $(this).addClass("present")
         } else if (thisHour < currentHour) {
           $(this).addClass("past")
         } else {
           $(this).addClass("future")
         }
-      });
-    //}
+    });
   }, 1000)
 } 
 
@@ -105,7 +96,9 @@ function showTime(){
   document.getElementById('myClockDisplay').innerText = time;
   document.getElementById('myClockDisplay').textContent = time;
   }
-  
-  setInterval(showTime, 1000);
+
+setInterval(showTime, 1000);
+
+// Below this line are the closing "ready function" delimiters from the top of the page
 })
 
