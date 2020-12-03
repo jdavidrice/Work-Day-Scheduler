@@ -1,11 +1,4 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  text-align: center;
-}
-
-body {
+/* body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -13,15 +6,21 @@ body {
 }
 
 p.timelabel {
-  text-align: left;
+  border-top: 1px;
+  border-bottom: 1px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: dashed; 
+  margin: inherit;
+  text-align: center;
   font-size: 1.5rem;
 }
 
 
-/* 
 .text-area{
   height: 6rem;
   width: 30rem;
+  height: inherit; 
   background: transparent;
   border: 2px solid lightgray;
   resize: none;
@@ -38,34 +37,24 @@ p.timelabel {
   color: black;
 }
 
-*/
+
 .jumbotron {
- /* text-align: center;
+  text-align: center;
   color: black;
-  border-radius: 0;*/
+  border-radius: 0;
   border-bottom: 1px solid rgb(141, 141, 141);
-  /*padding-bottom: 20px;*/
+  padding-bottom: 20px;
 }
 
 .description{
   white-space: pre-wrap;
 }
 
-/* #dayblock {
+ #dayblock {
   height: 55rem;
 }
+ 
 
- .btn, .btn-large, .btn-small, .btn-flat {
-  border: none;
-  border-radius: 2px;
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 16px;
-  text-transform: uppercase;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: green; 
-*/
 .timeblock {
   background-color: transparent;
   border-style: solid;
@@ -79,7 +68,6 @@ p.timelabel {
   padding: auto;
 }
 
-/*
 .row {
   white-space: pre-wrap;
   height: 80px;
@@ -91,7 +79,7 @@ p.timelabel {
   color: #000000;
   border-top: 1px dashed #000000;
 }
-*/
+
 .past {
   background-color: #d3d3d3;
   color: black;
@@ -106,20 +94,21 @@ p.timelabel {
   background-color: #77dd77;
   color: black;
 }
-/*
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  height: 5rem;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
-}
-*/
+} */
+
 /* Digital Clock */
 
 .clock {
@@ -131,4 +120,105 @@ p.timelabel {
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: 4px;
+}
+/* End Digital Clock */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+textarea{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+  /* text-align: center; */
+  /* font-size: 1.5rem; */
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+  height: 80px;
+  position: relative;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Use of this class and position, top, left, transform in .hour allow hour to be centered. http://css-workshop.com/css-center-textimagediv-in-middle-of-parent-div-container/ */
+.hourparent {
+  height: 80px;
+  position: relative;
+  border-top: 1px dashed #000000;
+}
+
+
+/* p.timelabel {
+  border-top: 1px;
+  border-bottom: 1px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: dashed; 
+  margin: inherit;
+  text-align: center;
+  font-size: 1.5rem;
+} */
+
+.past {
+  background-color: #d3d3d3;
+  color: black;
+}
+
+.present {
+  background-color: #ff6961;
+  color: black;
+}
+
+.future {
+  background-color: #77dd77;
+  color: black;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
 }

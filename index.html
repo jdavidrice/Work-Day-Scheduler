@@ -18,23 +18,25 @@
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet">
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize CSS 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
     <!-- Additional CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Work Day Scheduler</title>
   </head>
   <body>
     <!-- Header -->
-    <header id="jumbotron" class="jumbotron"></header>
+    <header id="jumbotron" class="jumbotron">
+    </header>
+    <!-- <div class="today"> -->
+    </div>
       <div class="container">
-        <!-- Main Content -->
-        <div class="today"></div>
-        <!-- Timeblocks -->
-        <div id="timeblock8" data-hour="8" class="timeblock">
-          <p class="timelabel">8:00 AM</p>
-          <input type="text" class="text-area" id="activity8" placeholder="Enter activity here">
-          <input type="submit" value="Save" class="saveBtn" id="saveBtn8">
+        <!-- Timeblocks go here-->
+        <div id="timeblock8" class="row time-block">
+          <div class="col-1 hourparent"><p class="hour">8:00 A.M.</p>
+          </div>
+          <textarea class="col-10" id="activity8" data-hour="8" placeholder="Enter activity here"></textarea>
+          <input type="submit" value="Save" class="saveBtn col-1" id="saveBtn8">
         </div><br>
         <div id="timeblock9" data-hour="9" class="timeblock">
           <p class="timelabel">9:00 AM</p>
@@ -77,8 +79,8 @@
           <input type="submit" value="Save" class="saveBtn" id="saveBtn4">
         </div><br>
       </div>
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialize JS 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Moment.js -->

@@ -2,12 +2,13 @@
 $(document).ready(function () {
 
 // Materialize auto init
-M.AutoInit();
+//M.AutoInit();
 
 // Moment instance
 const m = moment();
 
-// Getters and Setters for each timeblock
+// Getting and setting with local storage
+
 activity8.value = localStorage.getItem('activity8');
 saveBtn8.onclick = () => {
   localStorage.setItem('activity8', activity8.value)
@@ -62,7 +63,7 @@ $('.today').html(`
 function updateCheck () {
   setInterval(()=> {
     currentHour = m.hour()
-      $( ".timeblock" ).each(function() {
+      $( "textarea" ).each(function() {
         const thisHour = $(this).attr("data-hour")
         if (thisHour == currentHour) {
           $(this).addClass("present")
@@ -92,7 +93,7 @@ function showTime(){
   m = (m < 10) ? "0" + m : m;
   s = (s < 10) ? "0" + s : s;
   
-  var time = h + ":" + m + ":" + s + " " + session;
+  var time = h + ":" + m + " " + session;
   document.getElementById('myClockDisplay').innerText = time;
   document.getElementById('myClockDisplay').textContent = time;
   }
