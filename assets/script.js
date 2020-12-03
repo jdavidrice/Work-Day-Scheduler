@@ -9,10 +9,7 @@ const m = moment();
 
 // Getting and setting with local storage
 
-activity8.value = localStorage.getItem('activity8');
-saveBtn8.onclick = () => {
-  localStorage.setItem('activity8', activity8.value)
-};
+
 activity9.value = localStorage.getItem('activity9');
 saveBtn9.onclick = () => {
   localStorage.setItem('activity9', activity9.value)
@@ -58,7 +55,45 @@ $('.jumbotron').html(`
 $('.today').html(`
   <h4>${m.format("dddd['s Schedule]")}</h4>
 `)
+  
+  let mtime = "8:00 AM"; 
+  let data = "data-hour='8'"
+  
+$('.container').html(`
+  <div id="timeblock8" class="row time-block">
+    <div class="col-1 hourparent"><p class="hour">${mtime}</p>
+    </div>
+    <textarea class="col-10" id="activity8" ${data} placeholder="Enter activity here"></textarea>
+    <input type="submit" value="Save" class="saveBtn col-1" id="saveBtn8">
+  </div>
+`)
+activity8.value = localStorage.getItem('activity8');
+saveBtn8.onclick = () => {
+  localStorage.setItem('activity8', activity8.value)
+};
+  
+  
+  // Array.from({ length: 0 }, makeTimeblocks());
 
+    function makeTimeblocks() {
+      let timeblock9 = $('.container').clone();
+      $(timeblock9).insertAfter('.container');
+    };
+    makeTimeblocks();
+
+
+
+  
+   
+  
+
+
+  
+  
+  
+  
+  
+  
 // Change timeblock color based on actual time
 function updateCheck () {
   setInterval(()=> {
