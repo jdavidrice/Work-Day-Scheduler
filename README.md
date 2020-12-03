@@ -21,7 +21,7 @@ This is a simple calendar application that allows a user to save events for each
 
 ## Photo
 
-![Screenshot of published website](work-day-scheduler.png)
+![Screenshot of published website](assets/images/work-day-scheduler.png)
 
 * [Return to Top](#Work-Day-Scheduler)
 
@@ -39,7 +39,9 @@ Use this browser-based Work-Day-Scheduler to help you organize your work day.
 
 ## Credits
 
+Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
 
+Moment.js Video Tutorials by "dcode" - https://www.youtube.com/playlist?list=PLVvjrrRCBy2LWFkR7opQxWp4z0en6OHgw
 
 * [Return to Top](#Work-Day-Scheduler)
 

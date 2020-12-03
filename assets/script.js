@@ -4,7 +4,6 @@ $(document).ready(function () {
   // Moment instance
   const m = moment();
 
- 
   // Header HTML
   $('.jumbotron').html(`
   <h1 class='display-3'>Work Day Scheduler</h1>
@@ -55,7 +54,7 @@ $(document).ready(function () {
   saveBtn4.onclick = () => {
     localStorage.setItem('activity4', activity4.value)
   };
-  
+
 // Change timeblock color based on actual time
 function updateCheck () {
   setInterval(()=> {
@@ -72,7 +71,6 @@ function updateCheck () {
     });
   }, 1000)
 } 
-
 updateCheck();
 
 // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
@@ -94,7 +92,6 @@ function showTime(){
   document.getElementById('myClockDisplay').innerText = time;
   document.getElementById('myClockDisplay').textContent = time;
   }
-
 setInterval(showTime, 1000);
 
 // Below this line are the closing "ready function" delimiters from the top of the page
