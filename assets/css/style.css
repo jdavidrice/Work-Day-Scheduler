@@ -3,6 +3,18 @@ body {
   font-size: 16px;
   line-height: 1;
 }
+.grid-container {
+  display: grid;
+  padding: 2em;
+}
+/* .grid-container--fill {
+  grid-template-columns:
+  repeat(auto-fill, minmax(100px, 1fr));
+}
+.grid-container--fit {
+  grid-template-columns:
+  repeat(auto-fit, minmax(100px, 1fr));
+} */
 textarea{
   background: transparent;
   border: none;
@@ -40,6 +52,7 @@ textarea{
   margin-bottom: 0px;
   text-align: center;
   font-size: 1.5rem;
+  min-width: 60px;
   position: absolute;
   top: 50%;
   left: 50%;
