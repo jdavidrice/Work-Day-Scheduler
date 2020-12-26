@@ -3,10 +3,10 @@ body {
   font-size: 16px;
   line-height: 1;
 }
-.grid-container {
+/* .grid-container {
   display: inline-flexbox;
   padding: 4em;
-}
+} */
 /* .grid-container--fill {
   grid-template-columns:
   repeat(auto-fill, minmax(100px, 1fr));
@@ -21,7 +21,7 @@ textarea{
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center; 
   font-size: 1.5rem;
   /* min-width: 200px; */
