@@ -113,6 +113,10 @@ textarea{
 }
 @media only screen and (max-width: 450px) {
   h1.display-3 {
-    font-size: 60px;
+    font-size: 50px;
+  }
+  textarea {
+    font-size: 1rem;
+
   }
 }
