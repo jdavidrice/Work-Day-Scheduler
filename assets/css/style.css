@@ -111,3 +111,8 @@ textarea{
   font-weight: bold;
   letter-spacing: 4px;
 }
+@media only screen and (max-width: 450px) {
+  h1.display-3 {
+    font-size: 60px;
+  }
+}
