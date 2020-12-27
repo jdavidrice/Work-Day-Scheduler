@@ -26,6 +26,14 @@ textarea{
   font-size: 1.5rem;
   /* min-width: 200px; */
 }
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: auto;
+}
+.item {
+  flex: 0 1 auto;
+}
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -47,13 +55,16 @@ textarea{
   height: 80px;
   border-top: 1px solid white;
 }
+.hourparent {
+  min-width: 70px;
+}
 .hour {
   background-color: #ffffff;
   color: #000000;
   margin-bottom: 0px;
   text-align: center;
   font-size: 1.5rem;
-  min-width: 60px;
+  /* min-width: 60px; */
   position: absolute;
   top: 50%;
   left: 50%;
