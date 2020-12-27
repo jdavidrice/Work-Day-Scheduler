@@ -22,38 +22,38 @@ $(document).ready(function () {
   saveBtn8.onclick = () => {
     localStorage.setItem('activity8', activity8.value)
   };
-  activity9.value = localStorage.getItem('activity9');
-  saveBtn9.onclick = () => {
-    localStorage.setItem('activity9', activity9.value)
-  };
-  activity10.value = localStorage.getItem('activity10');
-  saveBtn10.onclick = () => {
-    localStorage.setItem('activity10', activity10.value)
-  };
-  activity11.value = localStorage.getItem('activity11');
-  saveBtn11.onclick = () => {
-    localStorage.setItem('activity11', activity11.value)
-  };
-  activity12.value = localStorage.getItem('activity12');
-  saveBtn12.onclick = () => {
-    localStorage.setItem('activity12', activity12.value)
-  };
-  activity1.value = localStorage.getItem('activity1');
-  saveBtn1.onclick = () => {
-    localStorage.setItem('activity1', activity1.value)
-  };
-  activity2.value = localStorage.getItem('activity2');
-  saveBtn2.onclick = () => {
-    localStorage.setItem('activity2', activity2.value)
-  };
-  activity3.value = localStorage.getItem('activity3');
-  saveBtn3.onclick = () => {
-    localStorage.setItem('activity3', activity3.value)
-  };
-  activity4.value = localStorage.getItem('activity4');
-  saveBtn4.onclick = () => {
-    localStorage.setItem('activity4', activity4.value)
-  };
+  // activity9.value = localStorage.getItem('activity9');
+  // saveBtn9.onclick = () => {
+  //   localStorage.setItem('activity9', activity9.value)
+  // };
+  // activity10.value = localStorage.getItem('activity10');
+  // saveBtn10.onclick = () => {
+  //   localStorage.setItem('activity10', activity10.value)
+  // };
+  // activity11.value = localStorage.getItem('activity11');
+  // saveBtn11.onclick = () => {
+  //   localStorage.setItem('activity11', activity11.value)
+  // };
+  // activity12.value = localStorage.getItem('activity12');
+  // saveBtn12.onclick = () => {
+  //   localStorage.setItem('activity12', activity12.value)
+  // };
+  // activity1.value = localStorage.getItem('activity1');
+  // saveBtn1.onclick = () => {
+  //   localStorage.setItem('activity1', activity1.value)
+  // };
+  // activity2.value = localStorage.getItem('activity2');
+  // saveBtn2.onclick = () => {
+  //   localStorage.setItem('activity2', activity2.value)
+  // };
+  // activity3.value = localStorage.getItem('activity3');
+  // saveBtn3.onclick = () => {
+  //   localStorage.setItem('activity3', activity3.value)
+  // };
+  // activity4.value = localStorage.getItem('activity4');
+  // saveBtn4.onclick = () => {
+  //   localStorage.setItem('activity4', activity4.value)
+  // };
 
 // Change timeblock color based on actual time
 function updateCheck () {

@@ -3,25 +3,12 @@ body {
   font-size: 16px;
   line-height: 1;
 }
-/* .grid-container {
-  display: inline-flexbox;
-  padding: 4em;
-} */
-/* .grid-container--fill {
-  grid-template-columns:
-  repeat(auto-fill, minmax(100px, 1fr));
-}
-.grid-container--fit {
-  grid-template-columns:
-  repeat(auto-fit, minmax(100px, 1fr));
-} */
 textarea{
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  /* padding: 10px; */
   text-align: center; 
   font-size: 1.5rem;
   /* min-width: 200px; */
@@ -55,16 +42,12 @@ textarea{
   height: 80px;
   border-top: 1px solid white;
 }
-.hourparent {
-  min-width: 70px;
-}
 .hour {
   background-color: #ffffff;
   color: #000000;
   margin-bottom: 0px;
   text-align: center;
   font-size: 1.5rem;
-  /* min-width: 60px; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -75,6 +58,7 @@ textarea{
   height: 80px;
   position: relative;
   border-top: 1px dashed #000000;
+  min-width: 70px;
 }
 .past {
   background-color: #d3d3d3;
@@ -117,6 +101,8 @@ textarea{
   }
   textarea {
     font-size: 1rem;
-
+  }
+  .clock {
+    font-size: 2rem;
   }
 }
