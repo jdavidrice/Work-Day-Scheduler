@@ -17,6 +17,22 @@ $(document).ready(function () {
   <h4>${m.format("dddd['s Schedule]")}</h4>
 `)
   
+  class Timeblock() {
+
+    
+  }
+  
+  const timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4];
+
+  $('.container').html(`
+    <div id = "timeblock8" class= "row time-block container">
+    <div class="col-1 hourparent item">
+      <p class="hour">8:00 A.M.</p>
+    </div>
+    <textarea class="col-10 item" id="activity8" data-hour="8" placeholder="Enter activity here"></textarea>
+    <input type="submit" value="Save" class="saveBtn col-1 item" id="saveBtn8">
+  </div>
+  `)
   // Getting and setting with local storage
   activity8.value = localStorage.getItem('activity8');
   saveBtn8.onclick = () => {
@@ -55,11 +71,11 @@ $(document).ready(function () {
   //   localStorage.setItem('activity4', activity4.value)
   // };
 
-// Change timeblock color based on actual time
-function updateCheck () {
-  setInterval(()=> {
-    currentHour = m.hour()
-      $( "textarea" ).each(function() {
+  // Change timeblock color based on actual time
+  function updateCheck() {
+    setInterval(() => {
+      currentHour = m.hour()
+      $("textarea").each(function () {
         const thisHour = $(this).attr("data-hour")
         if (thisHour == currentHour) {
           $(this).addClass("present")
@@ -68,32 +84,32 @@ function updateCheck () {
         } else {
           $(this).addClass("future")
         }
-    });
-  }, 1000)
-} 
-updateCheck();
-
-// Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
-function showTime(){
-  var date = new Date();
-  var h = date.getHours(); // 0 - 23
-  var m = date.getMinutes(); // 0 - 59
-  var s = date.getSeconds(); // 0 - 59
-  var session = h >= 12 ? 'PM' : 'AM';
-  
-  h = h % 12;
-  h = h ? h : 12;
-  
-  //h = (h < 10) ? "0" + h : h;
-  m = (m < 10) ? "0" + m : m;
-  s = (s < 10) ? "0" + s : s;
-  
-  var time = h + ":" + m + " " + session;
-  document.getElementById('myClockDisplay').innerText = time;
-  document.getElementById('myClockDisplay').textContent = time;
+      });
+    }, 1000)
   }
-setInterval(showTime, 1000);
+  updateCheck();
 
-// Below this line are the closing "ready function" delimiters from the top of the page
+  // Digital Clock - based on https://codepen.io/afarrar/pen/JRaEjP, but incorporating code from https://time.gov to make it work correctly
+  function showTime() {
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = h >= 12 ? 'PM' : 'AM';
+
+    h = h % 12;
+    h = h ? h : 12;
+
+    //h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+
+    var time = h + ":" + m + " " + session;
+    document.getElementById('myClockDisplay').innerText = time;
+    document.getElementById('myClockDisplay').textContent = time;
+  }
+  setInterval(showTime, 1000);
+
+  // Below this line are the closing "ready function" delimiters from the top of the page
 })
 
