@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
   // Moment instance
-  const m = moment(); 
+  const m = moment();
 
   // Header HTML
   function header() {
@@ -15,25 +15,35 @@ $(document).ready(function () {
     $('.today').html(`
   <h4>${m.format("dddd['s Schedule]")}</h4>
   `)
-};
-header();
+  };
+  header();
 
-  function timeBlock() {
-    const timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4];
-    for (i = 0; i < 9; i++);
-
-    $('.container').html(`
-    <div id = "timeblock${timeArray[i]}" class= "row time-block container">
-    <div class="col-1 hourparent item">
-      <p class="hour">${timeArray[i]}:00 A.M.</p>
-    </div>
-    <textarea class="col-10 item" id="activity${timeArray[i]}" data-hour="${timeArray[i]}" placeholder="Enter activity here"></textarea>
-    <input type="submit" value="Save" class="saveBtn col-1 item" id="saveBtn${timeArray[i]}">
-  </div>
-  `)
-
+  const timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4];
+  for (let i = 0; i < timeArray.length; i++) {
+    console.log(timeArray[i]);
+    function timeBlock() {
+      $('.container0').html(`
+      <div id = "timeblock${timeArray[0]}" class= "row time-block container">
+      <div class="col-1 hourparent item">
+        <p class="hour">${timeArray[0]}:00 A.M.</p>
+      </div>
+      <textarea class="col-10 item" id="activity${timeArray[0]}" data-hour="${timeArray[0]}" placeholder="Enter activity here"></textarea>
+      <input type="submit" value="Save" class="saveBtn col-1 item" id="saveBtn${timeArray[0]}">
+      </div>
+      `);
+      $('.container1').html(`
+      <div id = "timeblock${timeArray[i]}" class= "row time-block container">
+      <div class="col-1 hourparent item">
+        <p class="hour">${timeArray[i]}:00 A.M.</p>
+      </div>
+      <textarea class="col-10 item" id="activity${timeArray[i]}" data-hour="${timeArray[i]}" placeholder="Enter activity here"></textarea>
+      <input type="submit" value="Save" class="saveBtn col-1 item" id="saveBtn${timeArray[i]}">
+      </div>
+      `);
+    };
   };
   timeBlock();
+
 
 
   // Getting and setting with local storage
