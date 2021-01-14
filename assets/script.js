@@ -2,42 +2,45 @@
 $(document).ready(function () {
 
   // Moment instance
-  const m = moment();
+  const m = moment(); 
 
   // Header HTML
-  $('.jumbotron').html(`
+  function header() {
+    $('.jumbotron').html(`
   <h1 class='display-3'>Work Day Scheduler</h1>
   <h2 id='subtitle' class='lead'>A simple calendar app for scheduling your work day.</h2>
   <p id='currentDay' class='lead'>${m.format('[Today is] dddd, MMMM Do YYYY[, and the time is...]')}</p><br>
   <h3 id='myClockDisplay' class='clock' onload='showTime()'></h3>
-`)
-
-  // Main content HTML
-  $('.today').html(`
+  `)
+    $('.today').html(`
   <h4>${m.format("dddd['s Schedule]")}</h4>
-`)
-  
-  class Timeblock() {
+  `)
+};
+header();
 
-    
-  }
-  
-  const timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4];
+  function timeBlock() {
+    const timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4];
+    for (i = 0; i < 9; i++);
 
-  $('.container').html(`
-    <div id = "timeblock8" class= "row time-block container">
+    $('.container').html(`
+    <div id = "timeblock${timeArray[i]}" class= "row time-block container">
     <div class="col-1 hourparent item">
-      <p class="hour">8:00 A.M.</p>
+      <p class="hour">${timeArray[i]}:00 A.M.</p>
     </div>
-    <textarea class="col-10 item" id="activity8" data-hour="8" placeholder="Enter activity here"></textarea>
-    <input type="submit" value="Save" class="saveBtn col-1 item" id="saveBtn8">
+    <textarea class="col-10 item" id="activity${timeArray[i]}" data-hour="${timeArray[i]}" placeholder="Enter activity here"></textarea>
+    <input type="submit" value="Save" class="saveBtn col-1 item" id="saveBtn${timeArray[i]}">
   </div>
   `)
-  // Getting and setting with local storage
-  activity8.value = localStorage.getItem('activity8');
-  saveBtn8.onclick = () => {
-    localStorage.setItem('activity8', activity8.value)
+
   };
+  timeBlock();
+
+
+  // Getting and setting with local storage
+  // activity8.value = localStorage.getItem('activity8');
+  // saveBtn8.onclick = () => {
+  //   localStorage.setItem('activity8', activity8.value)
+  // };
   // activity9.value = localStorage.getItem('activity9');
   // saveBtn9.onclick = () => {
   //   localStorage.setItem('activity9', activity9.value)
