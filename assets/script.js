@@ -4,8 +4,8 @@ $(document).ready(function () {
   // Moment instance
   const m = moment();
 
-  // Header HTML
-  function header() {
+  function renderHeaderAndDay() {
+    // Header HTML
     $('.jumbotron').html(`
   <h1 class='display-3'>Work Day Scheduler</h1>
   <h2 id='subtitle' class='lead'>A simple calendar app for scheduling your work day.</h2>
@@ -16,7 +16,7 @@ $(document).ready(function () {
   <h4>${m.format("dddd['s Schedule]")}</h4>
   `)
   };
-  header();
+  renderHeaderAndDay();
 
   const timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4];
   for (let i = 0; i < timeArray.length; i++) {
@@ -47,6 +47,7 @@ $(document).ready(function () {
       localStorage.setItem(`activity${timeArray[i]}`, document.getElementById(`activity${timeArray[i]}`).value)
     };
   };
+  localStorageFunction();
 
   // Change timeblock color based on actual time
   function updateCheck() {
@@ -88,5 +89,5 @@ $(document).ready(function () {
   setInterval(showTime, 1000);
 
   // Below this line are the closing "ready function" delimiters from the top of the page
-})
+});
 
