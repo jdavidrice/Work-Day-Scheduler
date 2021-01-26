@@ -11,55 +11,43 @@ $(document).ready(function () {
   <h2 id='subtitle' class='lead'>A simple calendar app for scheduling your work day.</h2>
   <p id='currentDay' class='lead'>${m.format('[Today is] dddd, MMMM Do YYYY[, and the time is...]')}</p><br>
   <h3 id='myClockDisplay' class='clock' onload='showTime()'></h3>
-`)
-    // Main content HTML
+  `)
     $('.today').html(`
   <h4>${m.format("dddd['s Schedule]")}</h4>
-`)
+  `)
   };
   renderHeaderAndDay();
 
-  function localStorageFunction() {
-    // Getting and setting with local storage
-    activity8.value = localStorage.getItem('activity8');
-    saveBtn8.onclick = () => {
-      localStorage.setItem('activity8', activity8.value)
-    };
-    activity9.value = localStorage.getItem('activity9');
-    saveBtn9.onclick = () => {
-      localStorage.setItem('activity9', activity9.value)
-    };
-    activity10.value = localStorage.getItem('activity10');
-    saveBtn10.onclick = () => {
-      localStorage.setItem('activity10', activity10.value)
-    };
-    activity11.value = localStorage.getItem('activity11');
-    saveBtn11.onclick = () => {
-      localStorage.setItem('activity11', activity11.value)
-    };
-    activity12.value = localStorage.getItem('activity12');
-    saveBtn12.onclick = () => {
-      localStorage.setItem('activity12', activity12.value)
-    };
-    activity1.value = localStorage.getItem('activity1');
-    saveBtn1.onclick = () => {
-      localStorage.setItem('activity1', activity1.value)
-    };
-    activity2.value = localStorage.getItem('activity2');
-    saveBtn2.onclick = () => {
-      localStorage.setItem('activity2', activity2.value)
-    };
-    activity3.value = localStorage.getItem('activity3');
-    saveBtn3.onclick = () => {
-      localStorage.setItem('activity3', activity3.value)
-    };
-    activity4.value = localStorage.getItem('activity4');
-    saveBtn4.onclick = () => {
-      localStorage.setItem('activity4', activity4.value)
+  const timeArray = [8, 9, 10, 11, 12, 1, 2, 3, 4];
+  for (let i = 0; i < timeArray.length; i++) {
+    timeBlock(i);
+    localStore(i);
+  };
+
+  function timeBlock(i) {
+    let period = "A.M."
+    const hour = timeArray[i];
+    if (hour > 11 || hour < 8) {
+      period = "P.M."
+    }
+    $('.container').append(`
+      <div id = "timeblock${timeArray[i]}" class= "row time-block">
+        <div class="col-xs-1 col-sm-1 col-md-1 hourparent item">
+          <p class="hour">${timeArray[i]}:00 ${period}</p>
+        </div>
+        <textarea class="col-xs-10 col-sm-10 col-md-10 item" id="activity${timeArray[i]}" data-hour="${timeArray[i]}" placeholder="Enter activity here"></textarea>
+        <input type="submit" value="Save" class="saveBtn col-xs-1 col-sm-1 col-md-1 item" id="saveBtn${timeArray[i]}"/>
+      </div>
+      `);
+  };
+
+  function localStore(i) {
+    document.getElementById(`activity${timeArray[i]}`).value = localStorage.getItem(`activity${timeArray[i]}`);
+    document.getElementById(`saveBtn${timeArray[i]}`).onclick = () => {
+      localStorage.setItem(`activity${timeArray[i]}`, document.getElementById(`activity${timeArray[i]}`).value)
     };
   };
   localStorageFunction();
-
 
   // Change timeblock color based on actual time
   function updateCheck() {

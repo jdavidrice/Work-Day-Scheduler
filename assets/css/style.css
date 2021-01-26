@@ -3,28 +3,24 @@ body {
   font-size: 16px;
   line-height: 1;
 }
-.grid-container {
-  display: grid;
-  padding: 2em;
-}
-/* .grid-container--fill {
-  grid-template-columns:
-  repeat(auto-fill, minmax(100px, 1fr));
-}
-.grid-container--fit {
-  grid-template-columns:
-  repeat(auto-fit, minmax(100px, 1fr));
-} */
 textarea{
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
   text-align: center; 
   font-size: 1.5rem;
+  /* min-width: 200px; */
 }
+/* .container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: auto;
+} */
+/* .item {
+  flex: 0 1 auto;
+} */
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -32,27 +28,26 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-.description{
+/* .description{
   white-space: pre-wrap;
-}
+} */
 .time-block{
   text-align: center;
   border-radius: 15px;
   height: 80px;
-  position: relative;
+  /* position: relative; */
 }
-.row {
+/* .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
-}
+} */
 .hour {
   background-color: #ffffff;
   color: #000000;
   margin-bottom: 0px;
   text-align: center;
   font-size: 1.5rem;
-  min-width: 60px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -63,6 +58,7 @@ textarea{
   height: 80px;
   position: relative;
   border-top: 1px dashed #000000;
+  /* min-width: 70px; */
 }
 .past {
   background-color: #d3d3d3;
@@ -82,6 +78,7 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  /* min-width: 70px; */
 }
 .saveBtn i:hover {
   font-size: 20px;
@@ -97,4 +94,15 @@ textarea{
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: 4px;
+}
+@media only screen and (max-width: 450px) {
+  h1.display-3 {
+    font-size: 50px;
+  }
+  textarea {
+    font-size: 1rem;
+  }
+  .clock {
+    font-size: 2rem;
+  }
 }
